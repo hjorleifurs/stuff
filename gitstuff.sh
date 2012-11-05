@@ -37,6 +37,10 @@ case $val in
 	   echo "push your stuff back to github stuff.git"
 	   git push -u http://github.com/hjorleifurs/stuff.git
 	   ;;
+	3) 
+	   echo "push your stuff back to github stuff.git"
+	   git push -u http://github.com/hjorleifurs/old.git
+	   ;;
 	bin) echo "using rsync to move stuff to bin"
 	     rsync -uva --exclude '.git' . ~/bin
 	   ;;
