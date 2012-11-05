@@ -5,7 +5,9 @@ echo
 echo "a) fetch RHI.git (clone)"
 
 echo "b) fetch stuff.git (clone)"
-echo "c) add and commit changes"
+echo "c) fetch OLD.git (clone)"
+echo
+echo "k) add and commit changes"
 echo
 echo "1) push changes back to RHI.git"
 echo "2) push changes back to stuff.git"
@@ -26,6 +28,10 @@ case $val in
 	  git clone https://github.com/hjorleifurs/stuff.git
 	   ;;
 	c|C) 
+	   echo "get OLD.git"
+	  git clone https://github.com/hjorleifurs/OLD.git
+	   ;;
+	k|K) 
 	   echo "add and commit your changes"
 	   git add $1
 	   git commit -a
