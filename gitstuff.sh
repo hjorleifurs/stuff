@@ -9,6 +9,7 @@ echo "c) add and commit changes"
 echo
 echo "1) push changes back to RHI.git"
 echo "2) push changes back to stuff.git"
+echo "3) push changes back to OLD.git"
 echo
 echo "bin) rsync everything to your ~/bin directory"
 echo "x) Exit"
@@ -39,7 +40,7 @@ case $val in
 	   ;;
 	3) 
 	   echo "push your stuff back to github stuff.git"
-	   git push -u http://github.com/hjorleifurs/old.git
+	   git push -u http://github.com/hjorleifurs/OLD.git
 	   ;;
 	bin) echo "using rsync to move stuff to bin"
 	     rsync -uva --exclude '.git' . ~/bin
