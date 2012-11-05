@@ -6,9 +6,11 @@ echo "a) fetch RHI.git (clone)"
 
 echo "b) fetch stuff.git (clone)"
 echo "c) add and commit changes"
+echo
 echo "1) push changes back to RHI.git"
 echo "2) push changes back to stuff.git"
 echo
+echo "bin) rsync everything to your ~/bin directory"
 echo "x) Exit"
 
 read val
@@ -34,6 +36,9 @@ case $val in
 	2) 
 	   echo "push your stuff back to github stuff.git"
 	   git push -u http://github.com/hjorleifurs/stuff.git
+	   ;;
+	bin) echo "using rsync to move stuff to bin"
+	     rsync -uva --exclude '.git' . ~/bin
 	   ;;
 	x|X) exit ;;
 esac
