@@ -6,19 +6,19 @@
 
 
 
-echo Usage: png2mpg name fps
+echo Usage: png2mpg.sh fps name
 
 echo
 
 
-fps=`echo "100/$2" | bc -l`
+fps=`echo "100/$1" | bc -l`
 
-name=$1
+name=$2
 
-echo convert some png files of $name at $2 fps to $name"-render"$2"fps.mpg"
+echo convert some png files of $name at $fps fps to $name"-render"$fps"fps.mpg"
 
 echo
 
-echo convert -delay $fps *.png $name"-render"$2"fps.mpg"
+echo convert -delay $fps *.png $name"-render"$fps"fps.mpg"
 echo
-convert -delay $fps *.png $name"-render"$2"fps.mpg"
+convert -delay $fps *.png $name"-render"$fps"fps.mpg"
