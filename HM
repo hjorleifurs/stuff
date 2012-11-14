@@ -1,0 +1,12 @@
+#!/bin/sh
+
+ivtv-tune -cE10
+
+RUNNING=`ps -efw| grep vlc | grep -v grep | wc -l`
+
+if [ $RUNNING -gt 0 ]
+	then
+	exit 0
+	else
+	vlc --audio-filter param_eq --param-eq-f1=233 --param-eq-f2=466 --param-eq-f3=932 --param-eq-gain1=-20 --param-eq-gain2=-20 --param-eq-gain3=-20 --param-eq-lowf=100 --param-eq-lowgain=15 --param-eq-q1=10 --param-eq-q2=10 --param-eq-q3=10 pvr:// &
+fi
