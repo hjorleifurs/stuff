@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#ivtv-tune -cS21
+ivtv-tune -cE6
+
+
+RUNNING=`ps -efw| grep vlc | grep -v grep | wc -l`
+
+
+if [ $RUNNING -gt 0 ]
+	then
+	exit 0
+	else
+	vlc pvr:// &
+fi
+
